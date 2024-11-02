@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup - Spotify Style</title>
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #121212;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .signup-container {
+            background-color: #1DB954;
+            border-radius: 8px;
+            padding: 40px;
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .signup-container h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .signup-container form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .signup-container label {
+            margin-bottom: 8px;
+            text-align: left;
+            font-size: 14px;
+        }
+
+        .signup-container input {
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 14px;
+            outline: none;
+        }
+
+        .signup-container input[type="email"],
+        .signup-container input[type="password"],
+        .signup-container input[type="text"] {
+            width: 100%;
+        }
+
+        .signup-container input:focus {
+            border-color: #1db954;
+        }
+
+        .signup-container button {
+            background-color: #1DB954;
+            border: none;
+            color: white;
+            padding: 10px;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .signup-container button:hover {
+            background-color: #18a749;
+        }
+
+        .signup-container small {
+            font-size: 12px;
+            margin-top: 10px;
+            color: #fff;
+        }
+
+        .signup-container a {
+            color: white;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .social-signup {
+            margin: 20px 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .social-signup button {
+            margin: 8px 0;
+            background-color: #4267B2;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .social-signup button.google {
+            background-color: #DB4437;
+        }
+
+        .social-signup button:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <div class="signup-container">
+        <h1>Sign up for Spotify</h1>
+
+        <div class="social-signup">
+            <button>Sign up with Facebook</button>
+            <button class="google">Sign up with Google</button>
+        </div>
+
+        <form id="signupForm">
+            <label for="email">What's your email?</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <label for="password">Create a password</label>
+            <input type="password" id="password" name="password" placeholder="Create a password" required minlength="6">
+
+            <label for="name">What should we call you?</label>
+            <input type="text" id="name" name="name" placeholder="Enter your profile name" required>
+
+            <button type="submit">Sign Up</button>
+        </form>
+
+        <small>By signing up, you agree to Spotify's <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a>.</small>
+    </div>
+
+    <script>
+        document.getElementById('signupForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const name = document.getElementById('name').value;
+
+            // Basic validation check for demonstration
+            if (!email || !password || !name) {
+                alert("All fields are required!");
+                return;
+            }
+
+            // Password length validation
+            if (password.length < 6) {
+                alert("Password must be at least 6 characters long.");
+                return;
+            }
+
+            // Here you could send the data to a server or further process it
+            alert(`Signup successful! Welcome, ${name}`);
+        });
+    </script>
+</body>
+</html>

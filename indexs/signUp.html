@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup - Amazon Style</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f3f3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .signup-container {
+            width: 100%;
+            max-width: 400px;
+            padding: 20px;
+        }
+
+        .signup-box {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .signup-box h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .signup-box label {
+            font-size: 14px;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .signup-box input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .signup-box button {
+            width: 100%;
+            background-color: #0fef1a;
+            color: #111;
+            padding: 10px;
+            border: 1px solid #1ec46e;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .signup-box button:hover {
+            background-color: #11e931;
+        }
+
+        .signup-box small {
+            font-size: 12px;
+            color: #555;
+        }
+
+        .signup-box p {
+            font-size: 12px;
+            color: #555;
+            text-align: center;
+        }
+
+        .signup-box a {
+            color: #0066c0;
+            text-decoration: none;
+        }
+
+        .signup-box a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="signup-container">
+        <div class="signup-box">
+            <h1>Create Account</h1>
+            <form id="signupForm">
+                <label for="name">Your name</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required minlength="6">
+                <small>Password must be at least 6 characters long.</small>
+                
+                <label for="passwordConfirm">Re-enter password</label>
+                <input type="password" id="passwordConfirm" name="passwordConfirm" required>
+                
+                <button type="submit">Create your Spotify account</button>
+            </form>
+            
+            <p>By creating an account, you agree to Spotify <a href="#">Conditions of Use</a> and <a href="#">Privacy Notice</a>.</p>
+            
+            <hr>
+            
+            <p>Already have an account? <a href="#">Sign in</a></p>
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById('signupForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form from submitting by default
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const passwordConfirm = document.getElementById('passwordConfirm').value;
+
+            // Basic validation for matching passwords
+            if (password !== passwordConfirm) {
+                alert("Passwords do not match!");
+                return;
+            }
+
+            // Add additional validation or processing (like sending data to server)
+
+            alert('Account created successfully!');
+        });
+    </script>
+</body>
+</html>

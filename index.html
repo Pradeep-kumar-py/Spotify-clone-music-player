@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style/utility.css">
+</head>
+
+<body>
+
+    <div class="nav">
+        <div>
+            <img src="svg/hamburger.svg" alt="" class="hamburger">
+            <img src="svg/logo.svg" alt="logo" class="invert" id="spotify_logo">
+        </div>
+        <div>
+            <div class="button-search">
+                <button type="button"><img src="svg/home.svg" alt="home" class="invert "></button>
+                <div class="search-icon"><img src="svg/search.svg" height="36" alt="" ></div>
+            </div>
+            <div class="inputSearch">
+                <input type="text" class="search_box" placeholder="What do you want to play?">
+
+            </div>
+        </div>
+        <div>
+            <span><button onclick="window.location.href= 'indexs/signUp.html' "type="button" class="button signUp" >Sign up</button></span>
+            <span><button onclick="window.location.href='indexs/signupSpotify.html'" type="button" class="button login">Log in</button></span>
+        </div>
+    </div>
+    <div class="main">
+        <div class="left">
+            <div class="library_box">
+                <div class="library">
+                    <div class="your_library">
+                        <img src="svg/library.svg" alt="" class="invert">
+                        <h4>Your Library</h4>
+                    </div>
+                    <span>
+                        <img src="svg/add.svg" alt="" class="invert">
+                    </span>
+
+                </div>
+                <div class="songList">
+                    <ul>
+                        <!-- <li>
+                            <div class="songBorder">
+                                <img src="svg/music.svg" alt="">
+                                <div class="songinfo">
+                                    <div class="songName"></div>
+                                    <div class="artistName"></div>
+                                </div>
+                            </div>
+                            <div class="playNow">
+                                <div>Play Now</div>
+                                <img src="svg/play2.svg" alt="">
+                            </div>
+
+                        </li> -->
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+        <div class="right-container">
+            <div class="right">
+            </div>
+            <div class="music-player">
+                <div class="seekBar">
+                    <div class="circle"></div>
+                </div>
+
+                <div class="music_Time">
+                    <div class="music-info"></div>
+                    <!-- <div class="musicTime"></div> -->
+                </div>
+                <div class="play-button">
+                    <img id="previous" src="svg/previous.svg" alt="">
+                    <!-- <img id="pauseButton" src="svg/pause.svg" alt=""> -->
+                    <img id="playButton" src="svg/play.svg" alt="">
+                    <img id="next" src="svg/next.svg" alt="">
+                </div>
+                <div class="volume_time">
+                    <div class="musicTime"></div>
+                    <div class="range">
+                        <!-- <input type="range" name="volume" id=""> -->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+
+
+    <script src="script/script.js"></script>
+    <!-- <script src="script5.js"></script> -->
+</body>
+
+</html>
