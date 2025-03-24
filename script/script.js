@@ -113,7 +113,7 @@ async function fetchFolders() {
         const folderName = folder.href.split("/").slice(-2, -1)[0];
         
         // Filter out the server URL and any invalid entries
-        if (folder.href.endsWith("/") && !folderName.startsWith("https://pradeep-kumar-py.github.io/Spotify-clone-music-player/")) {
+        if (folder.href.endsWith("/") && !folderName.startsWith("127.0.0.1:3000")) {
             let folderDiv = document.createElement("div");
             folderDiv.classList.add("musicFolder");
             folderDiv.setAttribute("data-folder", folderName);
@@ -178,7 +178,7 @@ async function displaySongs(folder) {
 // Play selected song
 function playMusic(track, folder) {
     currFolder = folder;
-    currentSong.src = `./songs/${folder}/${track}`;
+    currentSong.src = `/songs/${folder}/${track}`;
     currentSong.play();
     document.querySelector(".music-info").innerHTML = decodeURI(track);
     document.querySelector(".musicTime").innerHTML = "00:00/00:00";
@@ -187,7 +187,7 @@ function playMusic(track, folder) {
 
 function prepareMusic(track, folder) {
     currFolder = folder;
-    currentSong.src = `./songs/${folder}/${track}`; // Set the song source
+    currentSong.src = `/songs/${folder}/${track}`; // Set the song source
     document.querySelector(".music-info").innerHTML = decodeURI(track); // Display song info
     document.querySelector(".musicTime").innerHTML = "00:00/00:00"; // Reset time display
     document.querySelector("#playButton").src = "svg/play.svg"; // Ensure play icon is shown
