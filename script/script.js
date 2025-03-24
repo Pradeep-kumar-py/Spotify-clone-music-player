@@ -113,7 +113,7 @@ async function fetchFolders() {
         const folderName = folder.href.split("/").slice(-2, -1)[0];
         
         // Filter out the server URL and any invalid entries
-        if (folder.href.endsWith("/") && !folderName.startsWith("https://github.com/Pradeep-kumar-py/Spotify-clone-music-player/tree/main/songs")) {
+        if (folder.href.endsWith("/") && !folderName.startsWith("https://pradeep-kumar-py.github.io/Spotify-clone-music-player/")) {
             let folderDiv = document.createElement("div");
             folderDiv.classList.add("musicFolder");
             folderDiv.setAttribute("data-folder", folderName);
