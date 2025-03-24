@@ -21,6 +21,9 @@ async function fetchAllSongs() {
     let div = document.createElement("div");
     div.innerHTML = text;
     let folders = div.getElementsByTagName("a");
+    console.log("response",response);
+    console.log("text",text);
+    console.log("folders",folders);
 
     // Iterate through each folder to fetch songs
     for (let folder of folders) {
@@ -110,7 +113,7 @@ async function fetchFolders() {
         const folderName = folder.href.split("/").slice(-2, -1)[0];
         
         // Filter out the server URL and any invalid entries
-        if (folder.href.endsWith("/") && !folderName.startsWith("127.0.0.1:3000")) {
+        if (folder.href.endsWith("/") && !folderName.startsWith("https://github.com/Pradeep-kumar-py/Spotify-clone-music-player/tree/main/songs")) {
             let folderDiv = document.createElement("div");
             folderDiv.classList.add("musicFolder");
             folderDiv.setAttribute("data-folder", folderName);
