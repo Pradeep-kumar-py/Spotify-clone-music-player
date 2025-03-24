@@ -178,7 +178,7 @@ async function displaySongs(folder) {
 // Play selected song
 function playMusic(track, folder) {
     currFolder = folder;
-    currentSong.src = `/songs/${folder}/${track}`;
+    currentSong.src = `./songs/${folder}/${track}`;
     currentSong.play();
     document.querySelector(".music-info").innerHTML = decodeURI(track);
     document.querySelector(".musicTime").innerHTML = "00:00/00:00";
@@ -187,7 +187,7 @@ function playMusic(track, folder) {
 
 function prepareMusic(track, folder) {
     currFolder = folder;
-    currentSong.src = `/songs/${folder}/${track}`; // Set the song source
+    currentSong.src = `./songs/${folder}/${track}`; // Set the song source
     document.querySelector(".music-info").innerHTML = decodeURI(track); // Display song info
     document.querySelector(".musicTime").innerHTML = "00:00/00:00"; // Reset time display
     document.querySelector("#playButton").src = "svg/play.svg"; // Ensure play icon is shown
