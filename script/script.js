@@ -21,6 +21,9 @@ async function fetchAllSongs() {
     let div = document.createElement("div");
     div.innerHTML = text;
     let folders = div.getElementsByTagName("a");
+    console.log("response",response);
+    console.log("text",text);
+    console.log("folders",folders);
 
     // Iterate through each folder to fetch songs
     for (let folder of folders) {

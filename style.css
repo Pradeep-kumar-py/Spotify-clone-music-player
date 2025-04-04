@@ -252,6 +252,9 @@ body {
     position: relative;
     cursor: pointer;
 }
+/* .right:hover{
+  transform: ;
+}   */
 
 .musicFolder {
     position: relative;
